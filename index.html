@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechLearn | Learn Skills That Matter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/index.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h2 class="logo">TechLearn</h2>
+            <nav class="nav">
+                <a href="#features">Why Us</a>
+                <a href="#categories">Categories</a>
+                <a href="#courses">Courses</a>
+                
+               
+                <div id="userSection">
+                    
+                    <div id="loginSection">
+                        <button id="showLoginBtn" class="btn small">Login</button>
+                        <button id="showRegisterBtn" class="btn small">Register</button>
+                    </div>
+                    
+                    
+                    <div id="loggedInSection" style="display: none;">
+                        <span id="userGreeting" style="color: white; margin-right: 15px;"></span>
+                        <button id="logoutBtn" class="btn small">Logout</button>
+                    </div>
+                </div>
+                
+                <button id="themeToggle" class="btn small">🌙 Dark Mode</button>
+            </nav>
+        </div>
+    </header>
+
+  
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to TechLearn</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p id="loginError" style="color: red; margin-top: 10px; display: none;">Incorrect email or password</p>
+            </form>
+        </div>
+    </div>
+
+   
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Account</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name:</label>
+                    <input type="text" id="registerName" required placeholder="your name ">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password:</label>
+                    <input type="password" id="registerPassword" required placeholder="Create password">
+                </div>
+                <button type="submit" class="btn">Create Account</button>
+                <p id="registerError" style="color: red; margin-top: 10px; display: none;">Email already registered</p>
+            </form>
+        </div>
+    </div>
+
+    <section class="main">
+        <div class="container main-content">
+            <h1>Learn Skills That <span>Shape Your Future</span></h1>
+            <p>Build real-world skills with industry-focused online courses.</p>
+            <a href="#courses" class="btn">Explore Courses</a>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose TechLearn?</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from professionals with real industry experience.</p>
+                </div>
+                <div class="card">
+                    <h3>Flexible Learning</h3>
+                    <p>Learn at your own pace, anytime and anywhere.</p>
+                </div>
+                <div class="card">
+                    <h3>Career Focused</h3>
+                    <p>Skills designed to match current job market needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="section gray">
+        <div class="container">
+            <h2 class="section-title">Popular Categories</h2>
+            <div class="grid-4">
+                <div class="tag">Web Development</div>
+                <div class="tag">Mobile Apps</div>
+                <div class="tag">UI / UX Design</div>
+                <div class="tag">Cloud & DevOps</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Courses</h2>
+            
+            
+            <div id="personalWelcome" style="display: none; background: #2563eb; color: white; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                <h3>Welcome back, <span id="userNameDisplay"></span>!</h3>
+                <p>Continue your learning journey with these courses tailored for you.</p>
+            </div>
+            
+            <div class="wishlist-section">
+                <h3>Your Wishlist (<span id="wishlistCount">0</span> courses)</h3>
+                <div id="wishlistContainer" class="grid-3"></div>
+            </div>
+
+            <h3>All Courses</h3>
+            <div class="grid-3">
+                <div class="course" data-course="devops">
+                    <h3>DevOps</h3>
+                    <p>Collaborative and automated software delivery</p>
+                    <span>Advanced</span>
+                    <br>
+                    <a href="https://roadmap.sh/devops" target="_blank">View Course</a>
+                    <button class="wishlist-btn" data-course="devops">⭐ Add to Wishlist</button>
+                </div>
+                <div class="course" data-course="react">
+                    <h3>React from Scratch</h3>
+                    <p>Build modern web applications.</p>
+                    <span>Intermediate</span>
+                    <br><br>
+                    <a href="https://www.youtube.com/watch?v=SqcY0GlETPk&t=10s" target="_blank">View Course</a>
+                    <button class="wishlist-btn" data-course="react">⭐ Add to Wishlist</button>
+                </div>
+                <div class="course" data-course="backend">
+                    <h3>Backend Essentials</h3>
+                    <p>APIs, databases and server basics.</p>
+                    <span>Beginner</span>
+                    <br><br>
+                    <a href="https://www.w3schools.com/nodejs/" target="_blank">View Course</a>
+                    <button class="wishlist-btn" data-course="backend">⭐ Add to Wishlist</button>
+                </div>
+                  <div class="course" data-course="data-analyst">
+                    <h3>Data Analyst Roadmap</h3>
+                    <p>process of examining raw data to uncover trends and patterns,</p>
+                    <span>Beginner</span>
+                    <br><br>
+                    <a href="https://roadmap.sh/data-analyst" target="_blank">View Course</a>
+                    <button class="wishlist-btn" data-course="data-analyst">⭐ Add to Wishlist</button>
+                </div>
+                  <div class="course" data-course="cyber-security">
+                    <h3>Cyber Security</h3>
+                    <p> Confidentiality, Integrity, Availability. </p>
+                    <span>Advanced</span>
+                    <br><br>
+                    <a href="https://roadmap.sh/cyber-security" target="_blank">View Course</a>
+                    <button class="wishlist-btn" data-course="cyber-security">⭐ Add to Wishlist</button>
+                </div>
+                  <div class="course" data-course="AI">
+                    <h3>AI</h3>
+                    <p>smart, innovative, and transformative</p>
+                    <span>Beginner</span>
+                    <br><br>
+                    <a href="https://www.coursera.org/courses?query=artificial%20intelligence" target="_blank">View Course</a>
+                    <button class="wishlist-btn" data-course="AI">⭐ Add to Wishlist</button>
+                </div>
+                  <div class="course" data-course="Game Developer">
+                    <h3>Game Developer</h3>
+                    <p>mastering gaming </p>
+                    <span>Beginner</span>
+                    <br><br>
+                    <a href="https://roadmap.sh/game-developer" target="_blank">View Course</a>
+                    <button class="wishlist-btn" data-course="Game Developer">⭐ Add to Wishlist</button>
+                </div>
+                  <div class="course" data-course="Oracle Database">
+                    <h3>Oracle Database</h3>
+                    <p>designs, codes, and maintains applications and databases</p>
+                    <span>Intermediate</span>
+                    <br><br>
+                    <a href="https://www.coursera.org/courses?languages=fr&query=oracle&utm_medium=sem&utm_source=gg&utm_campaign=b2c_emea_x_multi_ftcof_career-academy_cx_dr_bau_gg_pmax_gc_s2_en_m_hyb_23-12_desktop&campaignid=20882109092&adgroupid=&device=c&keyword=&matchtype=&network=x&devicemodel=&creativeid=&assetgroupid=6566749494&targetid=&extensionid=&placement=&gad_source=1&gad_campaignid=20875558740&gbraid=0AAAAADdKX6buGuisG4a4H7W0CEW5gwuxi&gclid=CjwKCAiAqKbMBhBmEiwAZ3UboPm0BK_C3g287ny4rr0-NXT3Qjn7p8xdcMS9cKD7pLE5dCGQeLtgnBoCkBwQAvD_BwE" target="_blank">View Course</a>
+                    <button class="wishlist-btn" data-course="Oracle Database">⭐ Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gray">
+        <div class="container">
+            <h2 class="section-title">Your Learning Progress</h2>
+            <div class="progress-container">
+                <div class="progress-card">
+                    <h3>Visit Counter</h3>
+                    <p>You've visited TechLearn</p>
+                    <div class="progress-number" id="visitCount">0</div>
+                    <p>times</p>
+                </div>
+                <div class="progress-card">
+                    <h3>Course Views</h3>
+                    <p>Total courses viewed:</p>
+                    <div class="progress-number" id="coursesViewed">0</div>
+                    <button id="resetViews" class="btn small">Reset Count</button>
+                </div>
+                <div class="progress-card">
+                    <h3>Account Status</h3>
+                    <p>You are</p>
+                    <div class="progress-number" id="loginStatus">Not Logged In</div>
+                    <p id="loginTime">Register to track your progress</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>TechLearn</h3>
+                <p>Learn practical skills with high-quality online courses designed for real careers.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Courses</h4>
+                <ul>
+                    <li><a href="#">Frontend Development</a></li>
+                    <li><a href="#">Backend Development</a></li>
+                    <li><a href="#">React & JavaScript</a></li>
+                    <li><a href="#">UI / UX Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Why TechLearn</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter / X</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 TechLearn
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
