@@ -92,7 +92,7 @@ registerForm.addEventListener('submit', function(event) {
     const newUser = {
         name: name,
         email: email,
-        password: password, 
+        password: password,  
         joinDate: new Date().toISOString(),
         lastLogin: new Date().toISOString()
     };
